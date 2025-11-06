@@ -1,0 +1,397 @@
+/* style.css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    /* NUEVO: Azul Oscuro Elegante */
+    background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    color: #ffffff;
+}
+
+.contenedor-juego {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 420px;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Marcador Mejorado */
+.marcador {
+    background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.puntuaciones {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.puntuacion {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ecf0f1;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.turno-actual {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Mensaje Mejorado */
+.mensaje-juego {
+    margin: 20px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    min-height: 40px;
+    text-align: center;
+    padding: 12px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2c3e50;
+    /* Texto oscuro para fondo claro */
+    background: #f8f9fa;
+    /* Fondo gris claro */
+    border: 2px solid #e9ecef;
+    /* Borde sutil */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mensaje-juego.ganador {
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+}
+
+.mensaje-juego.empate {
+    background: linear-gradient(135deg, #f39c12 0%, #f1c40f 100%);
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);
+}
+
+.mensaje-juego.error {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+}
+
+/* Tablero Modernizado */
+.tablero {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 8px;
+    margin: 20px auto;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    padding: 12px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    max-width: 320px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.celda {
+    background: linear-gradient(135deg, #ecf0f1 0%, #bdc3c7 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(2.2rem, 9vw, 4rem);
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    min-height: 70px;
+}
+
+.celda:hover {
+    background: linear-gradient(135deg, #ffffff 0%, #d5dbdb 100%);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.celda:active {
+    transform: scale(0.95);
+}
+
+/* Controles Mejorados */
+.controles {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 14px 24px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+    min-width: 170px;
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+button:hover::before {
+    left: 100%;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(44, 62, 80, 0.4);
+}
+
+button:active {
+    transform: translateY(-1px);
+}
+
+button#reiniciar-marcador {
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+}
+
+button#reiniciar-marcador:hover {
+    box-shadow: 0 8px 20px rgba(39, 174, 96, 0.4);
+}
+
+/* Estilos para las marcas */
+.marca-x {
+    color: #e74c3c;
+    text-shadow: 2px 2px 4px rgba(231, 76, 60, 0.3);
+    animation: aparecer 0.4s ease;
+}
+
+.marca-o {
+    color: #3498db;
+    text-shadow: 2px 2px 4px rgba(52, 152, 219, 0.3);
+    animation: aparecer 0.4s ease;
+}
+
+@keyframes aparecer {
+    0% {
+        transform: scale(0) rotate(-180deg);
+        opacity: 0;
+    }
+
+    70% {
+        transform: scale(1.1) rotate(10deg);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+/* Efecto de victoria mejorado */
+.linea-ganadora {
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%) !important;
+    color: white !important;
+    animation: celebrar 0.6s ease infinite alternate;
+    box-shadow: 0 0 20px rgba(39, 174, 96, 0.5);
+}
+
+@keyframes celebrar {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 20px rgba(39, 174, 96, 0.5);
+    }
+
+    100% {
+        transform: scale(1.05);
+        box-shadow: 0 0 30px rgba(39, 174, 96, 0.8);
+    }
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 400px) {
+    body {
+        padding: 10px;
+    }
+
+    .contenedor-juego {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.9rem;
+    }
+
+    .tablero {
+        max-width: 280px;
+        padding: 10px;
+    }
+
+    .celda {
+        font-size: clamp(2rem, 10vw, 3.5rem);
+        min-height: 60px;
+    }
+
+    .controles {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    button {
+        width: 100%;
+        max-width: 220px;
+        min-width: auto;
+    }
+
+    .marcador {
+        padding: 12px;
+    }
+
+    .puntuacion {
+        font-size: 1rem;
+    }
+}
+
+/* Para pantallas muy pequeñas en altura */
+@media (max-height: 700px) {
+    .contenedor-juego {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    .marcador {
+        margin-bottom: 15px;
+        padding: 10px;
+    }
+
+    .tablero {
+        max-width: 260px;
+        margin: 15px auto;
+    }
+
+    .celda {
+        font-size: clamp(1.8rem, 8vw, 3rem);
+        min-height: 55px;
+    }
+
+    .mensaje-juego {
+        margin: 15px 0;
+        font-size: 1.1rem;
+        min-height: 35px;
+        padding: 10px;
+    }
+
+    .controles {
+        margin-top: 20px;
+    }
+
+    button {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+}
+
+/* Para pantallas grandes */
+@media (min-width: 1200px) {
+    .contenedor-juego {
+        max-width: 460px;
+        padding: 30px;
+    }
+
+    .tablero {
+        max-width: 340px;
+    }
+
+    .celda {
+        font-size: clamp(2.5rem, 6vw, 4.2rem);
+        min-height: 85px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Efecto de partículas de fondo opcional */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(120, 119, 198, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}

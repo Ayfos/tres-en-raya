@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de tres en raya</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="contenedor-juego">
+        <header>
+            <h1>Tres en Raya</h1>
+        </header>
+        
+        
+        <section class="marcador">
+            <div class="puntuaciones">
+                <div class="puntuacion">❌ <span id="puntos-x">0</span></div>
+                <div class="puntuacion">🤝 <span id="puntos-empates">0</span></div>
+                <div class="puntuacion">⭕ <span id="puntos-o">0</span></div>
+            </div>
+            <div class="turno-actual" id="turno-actual">Turno: ❌</div>
+        </section>
+
+    
+        <div id="mensaje-juego" class="mensaje-juego"></div>
+
+        <main>
+            <section class="tablero">
+                <div class="celda" data-fila="0" data-columna="0"></div>
+                <div class="celda" data-fila="0" data-columna="1"></div>
+                <div class="celda" data-fila="0" data-columna="2"></div>
+                <div class="celda" data-fila="1" data-columna="0"></div>
+                <div class="celda" data-fila="1" data-columna="1"></div>
+                <div class="celda" data-fila="1" data-columna="2"></div>
+                <div class="celda" data-fila="2" data-columna="0"></div>
+                <div class="celda" data-fila="2" data-columna="1"></div>
+                <div class="celda" data-fila="2" data-columna="2"></div>
+            </section>
+            
+            <section class="controles">
+                <button id="reiniciar">Reiniciar Juego</button>
+                <button id="reiniciar-marcador">Reiniciar Marcador</button>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
