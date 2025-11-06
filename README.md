@@ -89,7 +89,7 @@ El proyecto fue desarrollado siguiendo un enfoque por capas:
 
 ## 🚀 Demo en Vivo
 
-[Jugar ahora](https://Ayfos.github.io/tres-en-raya)
+[Jugar ahora](https://ayfos.github.io/tres-en-raya/)
 
 ## 🎮 Cómo Jugar
 
